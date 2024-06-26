@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel Listesi</title>
+    <!-- jQuery ve Bootstrap kütüphanelerinin eklenmesi -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS dosyasının eklenmesi -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <h3>Personel Listesi</h3>
+    
+        <div class="input-group-addon">       
+        <button class="btn btn-primary mb-2" id="btnadd">Personel Ekle</button>
+        <input type="text" id="search" placeholder="Ara...">
+
+    </div>
+   
+        <table class="table table-light table-striped table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th>Sicil No</th>
+                    <th>Adı Soyadı</th>
+                    <th>Departman Adı</th>
+                    <th>Çalışan Statüsü</th>
+                    <th>Mesai Adı</th>
+                    <th>Giriş Tarihi</th>
+                    <th>Çıkış Tarihi</th>
+                    <th>İşlem</th>
+                </tr>
+            </thead>
+            <tbody id="tblBody">
+                <!-- Tablo satırları buraya JavaScript tarafından eklenecek -->
+            </tbody>
+        </table>
+        <div class="modal" id="PersonelModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Personel Bilgileri</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="Sicilno" class="form-label">Sicil Numarası:</label>
+                            <input type="text" id="Sicilno" class="form-control" placeholder="Sicil" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Adisoyadi" class="form-label">Adı Soyadı:</label>
+                            <input type="text" id="Adisoyadi" class="form-control" placeholder="AdSoyad" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Bolumadi" class="form-label">Departman Adı:</label>
+                            <input type="text" id="Bolumadi" class="form-control" placeholder="Departman " />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Ozelkod" class="form-label">Çalışan Statüsü:</label>
+                            <input type="text" id="Ozelkod" class="form-control" placeholder="Çalışan Statüsü" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Mesaiadi" class="form-label">Mesai Türü:</label>
+                            <input type="text" id="Mesaiadi" class="form-control" placeholder="Mesai Türü" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Giristarihi" class="form-label">Giriş Tarihi:</label>
+                            <input type="text" id="Giristarihi" class="form-control" placeholder="İş Başı" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Cikistarihi" class="form-label">Çıkış Tarihi:</label>
+                            <input type="text" id="Cikistarihi" class="form-control" placeholder="İş Çıkışı" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnSave">Kaydet</button>
+                        <button type="button" class="btn btn-success" id="btnUpdate" style="display:none">Güncelle</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Özel JavaScript dosyasının eklenmesi -->
+    <script src="~/js/personel.js"></script>
+
+    <nav aria-label="Page navigation">
+        <ul id="paginationList" class="pagination justify-content-center">
+            <li class="page-item disabled" id="previousPage">
+                <a class="page-link" href="#" tabindex="-1">Geri</a>
+            </li>
+            <!-- Sayfa düğmeleri buraya JavaScript tarafından eklenecek -->
+            <li class="page-item" id="nextPage">
+                <a class="page-link" href="#">İleri</a>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
